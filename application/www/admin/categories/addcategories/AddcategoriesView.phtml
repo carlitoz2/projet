@@ -1,0 +1,18 @@
+<!-- PAGE D'AJOUT D'UNE CATEGORIE-->
+<section>
+<!-- FORMULAIRE -->
+<form method="POST" action="<?= $requestUrl ?>/admin/categories/AddCategories" enctype="multipart/form-data">
+  
+
+
+
+    <input type="text" name="titreCategorie" id="titreCategorie" placeholder="Nom de la nouvelle Catégorie" value="">
+   
+    <input type="textarea" name="descriptionCategorie" id="descriptionCategorie" placeholder="Description de la Categorie"  value="">
+
+    <label for="imageCategorie">Fichier:</label>
+     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+     <input type="file" name="imageCategorie" id="imageCategorie" accept="image/png,image/jpeg,image/gif"/>
+     <input type="submit" value="soumettre l'article">
+    </form>
+</section>

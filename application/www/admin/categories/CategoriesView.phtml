@@ -1,0 +1,25 @@
+<section>
+    <table>
+    <a href="<?= $requestUrl ?>/admin/categories/AddCategories"><i class="fas fa-add"></i>Ajouter Catégorie</a>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($categories as $categorie):?>
+            <tr>
+                <td><?= $categorie['idcategories']?></td>
+                <td><?= $categorie['categorie_name']?></td>
+                <td><?= $categorie['categorie_description']?></td>
+                <td><img src="<?= $wwwUrl ?>/images/tea/<?=$categorie['categorie_picture']?>"></td>
+                <td><a href="<?= $requestUrl ?>/admin/categories/editcategorie?id=<?= $categorie['idcategories']?>"><i class="fas fa-edit"></i></a><a href="<?= $requestUrl ?>/Delcategorie?id=<?= $categorie['idcategories']?>"><i class="fas fa-trash"></i></a>
+                
+            </tr>
+        <?php endforeach;?>
+        </tbody>
+    </table>
+</section>
