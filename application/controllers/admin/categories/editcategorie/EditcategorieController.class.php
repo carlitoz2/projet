@@ -14,11 +14,10 @@ class EditcategorieController
         // Aller chercher dans la BDD les infos de la catégorie
         $categoryModel = new CategoryModel();
 		$categorie = $categoryModel->find($id);
+		var_dump($categorie);
 		return [
 			'categorie' => $categorie  //Dans ma vue j'aurais une variable nommée category qui aura de la valeur  $category du contrôleur  
 		];
-		
-		var_dump($categorie);
 
     }
 
@@ -35,13 +34,18 @@ class EditcategorieController
 		{
 			$photo = $http->moveUploadedFile('imageCategorie','/images/tea');
 		}
+		else
+		{
+			$photo = $formFields['imageOriginale'];
+		}
+
+		$id = $formFields['id'];
 
 		        // Enregistrer les données dans la base de données
-
-		$categoryModel = new CategoryModel();
-		$categoryModel->addCategorie($formFields['titreCategorie'],$formFields['descriptionCategorie'], $photo );
+		$categoryModel = new CategoryModel(); 
+		$categoryModel->update($formFields['id'], $formFields['titreCategorie'], $formFields['descriptionCategorie'], $photo);
 		
 		$http->redirectTo('admin/categories');
+	}
 
-    }
 }

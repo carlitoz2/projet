@@ -21,5 +21,9 @@ class CategoryModel{
         return $database->queryOne("SELECT * FROM categories WHERE idcategories= ?",[$id]);
     }
 
-
+    public function update($id,$nom,$description,$image){
+		$database = new Database();
+        
+        $database->executeSql("UPDATE categories SET categorie_name = ?, categorie_description = ?, categorie_picture = ? WHERE idcategories = ?", [$nom, $description, $image, $id]);
+	}
 }
