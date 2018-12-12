@@ -35,6 +35,8 @@ class AddCategoriesController
 
 		$categoryModel = new CategoryModel();
 		$categoryModel->addCategorie($formFields['titreCategorie'],$formFields['descriptionCategorie'], $photo );
+		$flashbag = new FlashBag();
+		$flashbag->add('La catégorie '.$formFields['titreCategorie'].' a bien été ajoutée');
 		
 		$http->redirectTo('admin/categories');
     }

@@ -1,5 +1,5 @@
 <?php
-
+//Creation de la classe DB utilisée par les controllers
 
 class Database
 {
@@ -8,7 +8,7 @@ class Database
 
 	public function __construct()
 	{
-		$configuration = new Configuration();
+		$configuration = new Configuration(); 
 
 		$this->pdo = new PDO
 		(

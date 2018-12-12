@@ -9,28 +9,16 @@ class Http
 
 	public function __construct()
 	{
-		$this->requestMethod = $_SERVER['REQUEST_METHOD'];
+		$this->requestMethod = $_SERVER['REQUEST_METHOD'];//récupère la méthode get ou post
 
-		if(isset($_SERVER['PATH_INFO']) == false || $_SERVER['PATH_INFO'] == '/')
+		if(isset($_SERVER['PATH_INFO']) == false || $_SERVER['PATH_INFO'] == '/')//si pas de valeur transmise
 		{
-			$this->requestPath = null;
+			$this->requestPath = null; //le chemin demandé est nul
 		}
 		else
 		{
-			$this->requestPath = strtolower($_SERVER['PATH_INFO']);
+			$this->requestPath = strtolower($_SERVER['PATH_INFO']);//construit l'appel au constructeur
 		}
-	}
-
-	public function getRacineDirectory()
-	{
-		if($this->requestPath == null)
-		{
-			return '';
-		}
-
-        $pathSegments = explode('/', $this->requestPath);
-
-        return $pathSegments[1];
 	}
 
 	public function getRequestFile()
@@ -74,7 +62,7 @@ class Http
         return false;
     }
 
-    public function hasUploadedFile($name)
+    public function hasUploadedFile($name) // verif si un fichier est envoyer, renvoie un booléen
     {
         if(array_key_exists($name, $_FILES) == true)
         {
@@ -87,7 +75,7 @@ class Http
         return false;
     }
 
-    public function moveUploadedFile($name, $path = null)
+    public function moveUploadedFile($name, $path = null) // bouge le fichier a un endroit determiné
     {
         if($this->hasUploadedFile($name) == false)
         {

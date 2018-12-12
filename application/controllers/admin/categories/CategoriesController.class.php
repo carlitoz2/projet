@@ -4,17 +4,23 @@ class CategoriesController
 {
     public function httpGetMethod(Http $http, array $queryFields)
     {
-    	/*
+		
+		/*
     	 * Méthode appelée en cas de requête HTTP GET
     	 *
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
     	 */
-
+	
 		$categoryModel = new CategoryModel();
 		$categories = $categoryModel->listAll();
+		$flashbag = new FlashBag();
+
+		//récupération des données dans la vue
+		
 		return [
-			'categories' =>$categories
+			'categories' =>$categories,
+			'flashbag' => $flashbag->fetchMessages()
 		];
 		
     }

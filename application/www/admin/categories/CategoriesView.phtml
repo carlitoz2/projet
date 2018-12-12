@@ -1,12 +1,13 @@
 <section>
-    <table>
-    <a href="<?= $requestUrl ?>/admin/categories/AddCategories"><i class="fas fa-add"></i>Ajouter Catégorie</a>
+    <table id="tableDonnee">
+    <a href="<?= $requestUrl ?>/admin/categories/AddCategories"><i class="fa fa-add"></i>Ajouter Catégorie</a>
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Description</th>
                 <th>Image</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -16,7 +17,7 @@
                 <td><?= $categorie['categorie_name']?></td>
                 <td><?= $categorie['categorie_description']?></td>
                 <td><img src="<?= $wwwUrl ?>/images/tea/<?=$categorie['categorie_picture']?>"></td>
-                <td><a href="<?= $requestUrl ?>/admin/categories/editcategorie?id=<?= $categorie['idcategories']?>"><i class="fas fa-edit"></i></a><a href="<?= $requestUrl ?>/Delcategorie?id=<?= $categorie['idcategories']?>"><i class="fas fa-trash"></i></a>
+                <td><a href="<?= $requestUrl ?>/admin/categories/editcategorie?id=<?= $categorie['idcategories']?>"><i class="fas fa-edit"></i></a><a href="<?= $requestUrl ?>/admin/categories/Delcategorie?id=<?= $categorie['idcategories']?>" data-toggle="modal" data-target="#delete"><i class="fas fa-trash"></i></a>
                 
             </tr>
         <?php endforeach;?>

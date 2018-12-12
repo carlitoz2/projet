@@ -1,29 +1,40 @@
 <?php
-
+// ce qui va agir sur la BDD
 class CategoryModel{
 
-    /* Méthode qui va renvoyer toutes les catégories */
-    public function listAll() {
-        $database = new Database(); // Connexion à la base de données
+    private $dbh; // bdd handler
 
-        return $database->query("SELECT * FROM categories");
+    public function __construct(){
+        $this->dbh = new Database(); // l'instance de l'objet dbh crée une database()
+    }
+    /* Méthode qui va renvoyer toutes les catégories */
+    public function listAll() { 
+        //$database = new Database(); // Connexion à la base de données
+
+        return $this->dbh->query("SELECT * FROM categories");
     }
 
     public function addCategorie($nom, $description, $image) {
-        $database = new Database(); // Connexion à la BDD
+        //$database = new Database(); // Connexion à la BDD
 
-        $database->executeSQL("INSERT INTO categories (categorie_name, categorie_description, categorie_picture) VALUES (?,?,?)",[$nom,$description, $image]);
+        $this->dbh->executeSQL("INSERT INTO categories (categorie_name, categorie_description, categorie_picture) VALUES (?,?,?)",[$nom,$description, $image]);
     }
 
     public function find($id){
-        $database = new Database();
+        //$database = new Database();
 
-        return $database->queryOne("SELECT * FROM categories WHERE idcategories= ?",[$id]);
+        return $this->dbh->queryOne("SELECT * FROM categories WHERE idcategories= ?",[$id]);
     }
 
     public function update($id,$nom,$description,$image){
-		$database = new Database();
+		//$database = new Database();
         
-        $database->executeSql("UPDATE categories SET categorie_name = ?, categorie_description = ?, categorie_picture = ? WHERE idcategories = ?", [$nom, $description, $image, $id]);
-	}
+        $this->dbh->executeSql("UPDATE categories SET categorie_name = ?, categorie_description = ?, categorie_picture = ? WHERE idcategories = ?", [$nom, $description, $image, $id]);
+    }
+    
+    public function delete($id){
+        //$database =new Database();
+
+        return $this->dbh->executeSql("DELETE FROM categories WHERE idcategories=?",[$id]);
+    }
 }
