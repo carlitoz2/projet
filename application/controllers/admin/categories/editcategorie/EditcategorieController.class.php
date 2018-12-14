@@ -14,7 +14,7 @@ class EditcategorieController
         // Aller chercher dans la BDD les infos de la catégorie
         $categoryModel = new CategoryModel();
 		$categorie = $categoryModel->find($id);
-
+		
 		return [
 			'categorie' => $categorie  //Dans ma vue j'aurais une variable nommée category qui aura de la valeur  $category du contrôleur  
 		];

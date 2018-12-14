@@ -15,9 +15,16 @@ class CategoryModel{
     }
 
     public function addCategorie($nom, $description, $image) {
-        //$database = new Database(); // Connexion à la BDD
-
+        if (empty($nom) || empty($description))
+		{
+            throw new DomainException
+		    ("Erreur de saisie du champ !");
+        
+        } 
+        else
+        {    
         $this->dbh->executeSQL("INSERT INTO categories (categorie_name, categorie_description, categorie_picture) VALUES (?,?,?)",[$nom,$description, $image]);
+        }
     }
 
     public function find($id){

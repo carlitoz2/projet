@@ -1,5 +1,7 @@
 <!-- PAGE D'AJOUT D'UNE CATEGORIE-->
+
 <section>
+
 <!-- FORMULAIRE -->
 <form method="POST" action="<?= $requestUrl; ?>/admin/categories/editcategorie" enctype="multipart/form-data">
   
@@ -8,7 +10,7 @@
     <input type="hidden" name="id" value="<?= $categorie['idcategories']?>" />
     <input type="text" name="titreCategorie" id="titreCategorie" placeholder="Nom de la nouvelle Catégorie" value="<?= $categorie['categorie_name']?>">
    
-    <input type="textarea" name="descriptionCategorie" id="descriptionCategorie" placeholder="Description de la Categorie"  value="<?= $categorie['categorie_description']?>">
+    <textarea name="descriptionCategorie" id="descriptionCategorie" placeholder="Description de la Categorie"><?= $categorie['categorie_description']?></textarea>
 
     <label for="imageCategorie">Fichier:</label>
     <input type="hidden" name="imageOriginale" value="<?= $categorie['categorie_picture']; ?>">
