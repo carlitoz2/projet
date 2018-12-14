@@ -1,19 +1,22 @@
 <!-- PAGE D'AJOUT D'UNE CATEGORIE-->
 
 <section>
-
+<section>
+<?php if ($errorMessage != ''):?>
+<div class="alert alert-danger"><?= $errorMessage ?></div>
+<?php endif; ?> 
 <!-- FORMULAIRE -->
 <form method="POST" action="<?= $requestUrl; ?>/admin/categories/editcategorie" enctype="multipart/form-data">
   
 
 
-    <input type="hidden" name="id" value="<?= $categorie['idcategories']?>" />
-    <input type="text" name="titreCategorie" id="titreCategorie" placeholder="Nom de la nouvelle Catégorie" value="<?= $categorie['categorie_name']?>">
+    <input type="hidden" name="id" value="<?= $id?>" />
+    <input type="text" name="titreCategorie" id="titreCategorie" placeholder="Nom de la nouvelle Catégorie" value="<?= $titreCategorie?>">
    
-    <textarea name="descriptionCategorie" id="descriptionCategorie" placeholder="Description de la Categorie"><?= $categorie['categorie_description']?></textarea>
+    <textarea name="descriptionCategorie" id="descriptionCategorie" placeholder="Description de la Categorie"><?= $descriptionCategorie?></textarea>
 
     <label for="imageCategorie">Fichier:</label>
-    <input type="hidden" name="imageOriginale" value="<?= $categorie['categorie_picture']; ?>">
+    <input type="hidden" name="imageOriginale" value="<?= $imageOriginale; ?>">
      <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
      <input type="file" name="imageCategorie" id="imageCategorie" accept="image/png,image/jpeg,image/gif"/>
      <input type="submit" value="soumettre l'article">

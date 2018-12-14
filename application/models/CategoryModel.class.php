@@ -35,8 +35,14 @@ class CategoryModel{
 
     public function update($id,$nom,$description,$image){
 		//$database = new Database();
+        if (empty($nom) || empty($description))
+		{
+            throw new DomainException("Reremplir les champs svp!");
         
-        $this->dbh->executeSql("UPDATE categories SET categorie_name = ?, categorie_description = ?, categorie_picture = ? WHERE idcategories = ?", [$nom, $description, $image, $id]);
+        } 
+        else{
+            $this->dbh->executeSql("UPDATE categories SET categorie_name = ?, categorie_description = ?, categorie_picture = ? WHERE idcategories = ?", [$nom, $description, $image, $id]);
+        }
     }
     
     public function delete($id){
