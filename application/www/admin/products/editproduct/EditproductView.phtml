@@ -1,19 +1,19 @@
-<!-- PAGE D'AJOUT D'UN PRODUIT-->
+<!-- PAGE D'EDIT D'UN PRODUIT-->
 <section>
 
-<h1>AJOUTER UN PRODUIT</h1>
+<h1>EDITER UN PRODUIT</h1>
 <!-- FORMULAIRE -->
 <form method="POST" action="<?= $requestUrl ?>/admin/products/addproduct" enctype="multipart/form-data" id="addProduct">
   
 
 
 
-    <input type="text" name="nomProduit" id="nomProduit" placeholder="Nom du nouveau Produit" value="<?= $nomProduit?>">
+    <input type="text" name="nomProduit" id="nomProduit" placeholder="Nom du nouveau Produit" value="">
     <p>
-    <textarea name="descriptionProduit" rows="15" id="descriptionProduit" placeholder="Description du Produit">$descriptionProduit</textarea>
+    <textarea name="descriptionProduit" rows="15" id="descriptionProduit" placeholder="Description du Produit"></textarea>
     </p>
 
-    <input type="text" name="subtitleProduit" id="subtitleProduit" placeholder="Sous-titre du produit" value="<?= $subtitleProduit?>">
+    <input type="text" name="subtitleProduit" id="subtitleProduit" placeholder="Sous-titre du produit">
     <p>
     <label for="idcategorie">Selectionner une catégorie</label>
     <select name="idcategorie" form="addProduct">

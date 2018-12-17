@@ -1,0 +1,33 @@
+<section>
+    <table id="tableDonnee">
+    <a class="btn btn-primary" role="button" href="<?= $requestUrl ?>/admin/products/addproduct"><i class="fa fa-add"></i>Ajouter Produit</a>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom Produit</th>
+                <th>Description</th>
+                <th>Sous-Titre</th>
+                <th>Prix</th>
+                <th>Image</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($products as $product):?>
+            <tr>
+                <td><?= $product['idproducts']?></td>
+                <td><?= $product['product_name']?></td>
+                <td><?= $product['product_subtitle']?></td>
+                <td><?= $product['product_description']?></td>
+                <td></td>
+                <td><img src="<?= $wwwUrl ?>/images/product/<?=$product['product_picture']?>"></td>
+                
+                <td>
+                <a href="<?= $requestUrl ?>/admin/products/editproduct?id=<?= $product['idproducts']?>"><i class="fas fa-edit"></i></a>
+                <a href="<?= $requestUrl ?>/admin/products/Delproducts?id=<?= $product['idproducts']?>" data-toggle="modal" data-target="#delete"><i class="fas fa-trash"></i></a>
+                
+            </tr>
+        <?php endforeach;?>
+        </tbody>
+    </table>
+</section>
