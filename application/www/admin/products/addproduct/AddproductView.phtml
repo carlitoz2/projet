@@ -1,0 +1,32 @@
+<!-- PAGE D'AJOUT D'UN PRODUIT-->
+<section>
+
+<h1>AJOUTER UN PRODUIT</h1>
+<!-- FORMULAIRE -->
+<form method="POST" action="<?= $requestUrl ?>/admin/products/addproduct" enctype="multipart/form-data" id="addProduct">
+  
+
+
+
+    <input type="text" name="nomProduit" id="nomProduit" placeholder="Nom du nouveau Produit" value="">
+    <p>
+    <textarea name="descriptionProduit" rows="15" id="descriptionProduit" placeholder="Description du Produit"></textarea>
+    </p>
+
+    <input type="text" name="subtitleProduit" id="subtitleProduit" placeholder="Sous-titre du produit">
+    <p>
+    <label for="idcategorie">Selectionner une catégorie</label>
+    <select name="idcategorie" form="addProduct">
+        <?php foreach($categories as $categorie):?>
+        <option value="<?= $categorie['idcategories']?>"><?= $categorie['categorie_name']?></option>
+        <?php endforeach;?>
+    </select>
+    </p>
+    <p>
+    <label for="imageProduit">Fichier:</label>
+     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+     <input type="file" name="imageProduit" id="imageProduit" accept="image/png,image/jpeg,image/gif"/>
+    </p>
+     <input type="submit" value="soumettre l'article">
+    </form>
+</section>
