@@ -10,7 +10,11 @@ class HomeController
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
     	 */
+<<<<<<< HEAD
     	$categoryModel = new CategoriesModel();
+=======
+    	$categoryModel = new CategoryModel();
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
         $categories = $categoryModel->listAll();
         
         return [

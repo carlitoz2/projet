@@ -12,8 +12,14 @@
  * the class file to load.
  */
 $config['autoload-chain'] = false;
+<<<<<<< HEAD
 
 // List of all the intercepting filters classes.
 $config['intercepting-filters'] = ['UserSession'];
 
 $config['layouts'] = ['admin'=>'LayoutAdmin'];
+=======
+$config['layouts'] = ['admin'=>'LayoutAdmin'];
+// List of all the intercepting filters classes.
+$config['intercepting-filters'] = [ ];
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939

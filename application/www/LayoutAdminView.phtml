@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+<<<<<<< HEAD
     <title><?=$title?></title>
 
     <!-- Bootstrap core CSS -->
@@ -15,6 +16,15 @@
 
      <!-- FONTAwesome core CSS -->
     <link href="<?=$wwwUrl?>/vendor/fontawesome-free/css/all.css" rel="stylesheet">
+=======
+    <title>Admin - Cupoftee</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="<?= $wwwUrl?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+     <!-- FONTAwesome core CSS -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
 
     <!--Datatable -->
     <link href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -25,15 +35,23 @@
 
   <body>
 
+<<<<<<< HEAD
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
       <div class="container">
         <a class="navbar-brand" href="<?=$requestUrl?>/admin/">Gestion d'un site de E-Commerce</a>
+=======
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container">
+        <a class="navbar-brand" href="<?= $requestUrl ?>/admin/categories/">GEstion des thés</a>
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
+<<<<<<< HEAD
             <li class="nav-item <?php if($active=='home'){ echo 'active';}?>">
               <a class="nav-link" href="<?=$requestUrl?>/admin/">Home
                 <span class="sr-only">(current)</span>
@@ -87,6 +105,46 @@
                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="<?=$requestUrl?>/admin/user/edit/?id=<?php //$_SESSION['user']['id']?>">Mes infos</a>
                 <a class="dropdown-item" href="<?=$requestUrl?>/admin/user/logout/">Déconnexion</a>
+=======
+            <li class="nav-item">
+              <a class="nav-link" href="<?= $requestUrl ?>/admin/categories/">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="listUser.php" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Produits
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="listArticle.php">Liste</a>
+                <a class="dropdown-item" href="addArticle.php">Ajouter</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="listUser.php" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Catégorie
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="listCategory.php">Liste</a>
+                <a class="dropdown-item" href="<?= $requestUrl ?>/admin/categories/AddCategories">Ajouter</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="listUser.php" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Utilisateurs
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="listCategory.php">Liste</a>
+                <a class="dropdown-item" href="addCategory.php">Ajouter</a>
+              </div>
+            </li>
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="listUser.php" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="logout.php">Déconnexion</a>
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
               </div>
               </li>
           
@@ -97,26 +155,46 @@
     </nav>
 
     <!-- Page Content -->
+<<<<<<< HEAD
     <div class="container mb-4">
       <div class="row">
         <div class="col-lg-12">
           <h1 class="mt-5"><?=$title?></h1>
+=======
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="mt-5">Gestion</h1>
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
           <?php 
           if(isset($flashbag) && $flashbag!=false):
             foreach($flashbag as $message):?>
               <div class="alert alert-success"><?=$message?></div>
+<<<<<<< HEAD
           <?php 
             endforeach;
           endif;
           ?>
             <!-- Affichage du template lié à la vue -->
             <?php include $this->viewData['template'] ?>
+=======
+          <?php
+            endforeach;
+          endif;
+          ?>
+         
+          <?php 
+          include $this->viewData['template']?>
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
         </div>
       </div>
     </div>
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
     <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -138,12 +216,18 @@
     </div>
 
     <!-- Bootstrap core JavaScript -->
+<<<<<<< HEAD
     <script src="<?=$wwwUrl?>/vendor/jquery/jquery.min.js"></script>
     <script src="<?=$wwwUrl?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+=======
+    <script src="<?= $wwwUrl?>/vendor/jquery/jquery.min.js"></script>
+    <script src="<?= $wwwUrl?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
     <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     
     <!-- Data Table -->
     <script>
+<<<<<<< HEAD
         /** DATATABLE */
         $(document).ready( function () {
              $('.tableDonnee').DataTable( {
@@ -200,6 +284,14 @@
         content_css: [
             '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
             '//www.tinymce.com/css/codepen.min.css']
+=======
+        $(document).ready( function () {
+            $('#tableDonnee').DataTable();
+        });
+        $('#delete').on('show.bs.modal', function (e) {
+          $('#linkdelete').attr("href", e.relatedTarget.href);
+          //$('#linkdelete').href =  e.relatedTarget.href;
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
         });
     </script>
 

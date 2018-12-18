@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+<!-- Message de notification -->
+<!-- Code HTML à écrire -->
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
 <main class="container">
     <section id="noel">
         <h1>C'est noël chez Cup of Tea, profitez-en !</h1>
@@ -16,8 +21,13 @@
         <h2><span>Choisissez votre thé</span></h2>
         <?php foreach($categories as $categorie):?>
             <a href="#">
+<<<<<<< HEAD
                 <img src="<?= $wwwUrl ?>/uploads/categories/<?=$categorie['cat_picture']?>" alt="Tasse de <?=$categorie['cat_name']?>" />
                 <h3><?=$categorie['cat_name']?></h3>
+=======
+                <img src="<?= $wwwUrl ?>/images/tea/<?=$categorie['categorie_picture']?>" alt="<?=$categorie['categorie_name']?>" />
+                <h3><?=$categorie['categorie_name']?></h3>
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
             </a>
         <?php endforeach;?>
     </section>

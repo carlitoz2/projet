@@ -57,10 +57,13 @@ main h3 {
 	color: #666;
 	margin: 0;
 }
+<<<<<<< HEAD
 table, th, td {
 	border: 1px solid #666;
 	border-collapse: collapse;
 }
+=======
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
 
 .btn {
 	background-color: #B09067;
@@ -87,7 +90,11 @@ table, th, td {
 }
 
 header {
+<<<<<<< HEAD
 	background-image: url(../images/bg.jpg);
+=======
+	background-image: url(../img/bg.jpg);
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-color: #96B011;
@@ -377,7 +384,11 @@ header nav a:hover {
 /* FOOTER */
 footer {
 	margin-top: 50px;
+<<<<<<< HEAD
 	background-image: url(../images/bg.jpg);
+=======
+	background-image: url(../img/bg.jpg);
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-color: #96B011;

@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /* Cette classe permet de faciliter la connexion à la bdd via PDO
 Elle ne permet qu'une seule instance de connexion vers le serveur de bdd (singleton de l'instance PDO) et facilite les requêtes préparées.
 
@@ -82,12 +83,49 @@ class Database
     public function query($sql, array $criteria = array())
     {
         $query = self::$pdo->prepare($sql);
+=======
+//Creation de la classe DB utilisée par les controllers
+
+class Database
+{
+	private $pdo;
+
+
+	public function __construct()
+	{
+		$configuration = new Configuration(); 
+
+		$this->pdo = new PDO
+		(
+			$configuration->get('database', 'dsn'),
+			$configuration->get('database', 'user'),
+			$configuration->get('database', 'password')
+		);
+
+		$this->pdo->exec('SET NAMES UTF8');
+		$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	}
+
+	public function executeSql($sql, array $values = array())
+	{
+		$query = $this->pdo->prepare($sql);
+
+		$query->execute($values);
+
+		return $this->pdo->lastInsertId();
+	}
+
+    public function query($sql, array $criteria = array())
+    {
+        $query = $this->pdo->prepare($sql);
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
 
         $query->execute($criteria);
 
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
+<<<<<<< HEAD
 	/** Execute une requête sql de type Select et renvoi la premièe ligne du jeu d'enregistrement
 	 * 
 	 * @param string $sql requête sql a executer
@@ -97,9 +135,19 @@ class Database
     public function queryOne($sql, array $criteria = array())
     {
         $query = self::$pdo->prepare($sql);
+=======
+    public function queryOne($sql, array $criteria = array())
+    {
+        $query = $this->pdo->prepare($sql);
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
 
         $query->execute($criteria);
 
         return $query->fetch(PDO::FETCH_ASSOC);
+<<<<<<< HEAD
     }
+=======
+	}
+	
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <section class="table-responsive">
 <p>
 <a class="btn btn-primary" role="button" href="<?= $requestUrl ?>/admin/categories/add/"><i class="fas fa-plus-square"></i> Ajouter une catégorie</a>
@@ -25,6 +26,31 @@
                     <td><a href="<?= $requestUrl ?>/admin/categories/edit/?id=<?=$categorie['cat_id']?>"><i class="fas fa-edit"></i></a> <a href="<?= $requestUrl ?>/admin/categories/del/?id=<?=$categorie['cat_id']?>"  data-toggle="modal" data-target="#delete"><i class="fas fa-trash-alt"></i></a></td>
                 </tr>
             <?php endforeach;?>
+=======
+<section>
+    <table id="tableDonnee">
+    <a class="btn btn-primary" role="button" href="<?= $requestUrl ?>/admin/categories/AddCategories"><i class="fa fa-add"></i>Ajouter Catégorie</a>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($categories as $categorie):?>
+            <tr>
+                <td><?= $categorie['idcategories']?></td>
+                <td><?= $categorie['categorie_name']?></td>
+                <td><?= $categorie['categorie_description']?></td>
+                <td><img src="<?= $wwwUrl ?>/images/tea/<?=$categorie['categorie_picture']?>"></td>
+                <td><a href="<?= $requestUrl ?>/admin/categories/editcategorie?id=<?= $categorie['idcategories']?>"><i class="fas fa-edit"></i></a><a href="<?= $requestUrl ?>/admin/categories/Delcategorie?id=<?= $categorie['idcategories']?>" data-toggle="modal" data-target="#delete"><i class="fas fa-trash"></i></a>
+                
+            </tr>
+        <?php endforeach;?>
+>>>>>>> 553850bf4f671f306465215fff33bd5854213939
         </tbody>
     </table>
 </section>
